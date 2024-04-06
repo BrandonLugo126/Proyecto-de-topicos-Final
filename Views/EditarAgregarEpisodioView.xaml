@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Proyecto_de_topicos_Final.Views.EditarAgregarEpisodioView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Proyecto_de_topicos_Final.Views" xmlns:viewmodels="clr-namespace:Proyecto_de_topicos_Final.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:SerieViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="#50000000">
+
+        <Border Padding="5" Background="Orange" BorderBrush="Black" BorderThickness="2" 
+ Width="300" Margin="10">
+
+            <DockPanel Margin="10">
+                <StackPanel DockPanel.Dock="Top">
+                    <Label>Titulo Episodio:</Label>
+                <TextBox Text="{Binding Episodio.Titulo}"></TextBox>
+                    <Label>Numero de episodio:</Label>
+                    <TextBox Text="{Binding Episodio.NumeroEpisodio}"></TextBox>
+                    <Label>Dirección URL de la imagen:</Label>
+                <TextBox Text="{Binding Episodio.URLimagen}"></TextBox>
+                    <Label>Contenido:</Label>
+                </StackPanel>
+                <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+                <Button>
+                    <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="5"></Setter>
+                        <Setter Property="Padding" Value="15,5"></Setter>
+                        <Setter Property="Command" Value="{Binding AgregarEpisodioCommand}"></Setter>
+                        <Setter Property="Content" Value="Agregar"></Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewmodels:Ventanas.EditarEpisodio}">
+                                    <Setter Property="Command" Value="{Binding EditarEpisodioCommand}"></Setter>
+                                <Setter Property="Content" Value="Guardar"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                </Button>
+                <Button Padding="15,5" Margin="5" Command="{Binding CambiarVistaCommand}"
+             CommandParameter="{x:Static viewmodels:Ventanas.ListaEpisodios}">Cancelar</Button>
+                </WrapPanel>
+                <TextBlock DockPanel.Dock="Bottom" Foreground="Red" TextAlignment="Center" Text="{Binding Error}"></TextBlock>
+
+            <TextBox AcceptsReturn="True" Text="{Binding Episodio.Descripcion}"></TextBox>
+
+            </DockPanel>
+        </Border>
+    
+</UserControl>
