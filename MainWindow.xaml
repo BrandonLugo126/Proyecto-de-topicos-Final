@@ -26,7 +26,19 @@
             </views:SerieView.Style>
         </views:SerieView>
         
-     
+        <views:TemporadasView>
+            <views:TemporadasView.Style>
+            <Style TargetType="UserControl">
+                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.AgregarTemporada}">
+                        <Setter Property="Visibility" Value="Visible"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </views:TemporadasView.Style>
+        </views:TemporadasView>
+
         <views:EditarAgregarTemporadaView>
             <views:EditarAgregarTemporadaView.Style>
                 <Style TargetType="UserControl">
@@ -40,7 +52,20 @@
             </views:EditarAgregarTemporadaView.Style>
         </views:EditarAgregarTemporadaView>
 
-            <views:EditarAgregarTemporadaView>
+        <views:TemporadasView>
+        <views:TemporadasView.Style>
+            <Style TargetType="UserControl">
+                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EditarTemporada}">
+                        <Setter Property="Visibility" Value="Visible"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </views:TemporadasView.Style>
+        </views:TemporadasView>
+
+        <views:EditarAgregarTemporadaView>
                 <views:EditarAgregarTemporadaView.Style>
                     <Style TargetType="UserControl">
                         <Setter Property="Visibility" Value="Collapsed"></Setter>
@@ -53,7 +78,20 @@
                 </views:EditarAgregarTemporadaView.Style>
             </views:EditarAgregarTemporadaView>
 
-            <views:EditarAgregarEpisodioView>
+        <views:EpisodiosView>
+            <views:EpisodiosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EditarEpisodio}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EpisodiosView.Style>
+        </views:EpisodiosView>
+
+        <views:EditarAgregarEpisodioView>
             <views:EditarAgregarEpisodioView.Style>
                 <Style TargetType="UserControl">
                     <Setter Property="Visibility" Value="Collapsed"></Setter>
@@ -65,6 +103,19 @@
                 </Style>
             </views:EditarAgregarEpisodioView.Style>
         </views:EditarAgregarEpisodioView>
+
+        <views:EpisodiosView>
+            <views:EpisodiosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.AgregarEpisodio}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EpisodiosView.Style>
+        </views:EpisodiosView>
 
         <views:EditarAgregarEpisodioView>
             <views:EditarAgregarEpisodioView.Style>
@@ -116,7 +167,20 @@
                 </Style>
             </views:EpisodiosView.Style>
         </views:EpisodiosView>
-
+        
+        <views:TemporadasView>
+            <views:TemporadasView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EliminarTemporada}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:TemporadasView.Style>
+        </views:TemporadasView>
+        
         <views:EliminarView>
             <views:EliminarView.Style>
                 <Style TargetType="UserControl">
@@ -129,6 +193,20 @@
                 </Style>
             </views:EliminarView.Style>
         </views:EliminarView>
+
+        <views:EpisodiosView>
+            <views:EpisodiosView.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Ventana}" Value="{x:Static viewModel:Ventanas.EliminarEpisodio}">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EpisodiosView.Style>
+        </views:EpisodiosView>
+        
         <views:EliminarView>
             <views:EliminarView.Style>
                 <Style TargetType="UserControl">
